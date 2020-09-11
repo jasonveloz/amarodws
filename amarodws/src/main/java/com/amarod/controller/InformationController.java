@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.amarod.model.Customer;
 import com.amarod.model.Information;
+import com.amarod.services.CustomerService;
 import com.amarod.services.InformationService;
 
 @CrossOrigin
@@ -19,6 +21,8 @@ public class InformationController {
 
 	@Autowired
 	private InformationService infoService;
+	@Autowired
+	private CustomerService customerService;
 
 	@GetMapping(value = "/informations")
 	public ResponseEntity<List<Information>> getAllInformations() {
@@ -34,7 +38,8 @@ public class InformationController {
 
 	@GetMapping(value = "/customers/{customerId}/informations")
 	public ResponseEntity<List<Information>> getInformationByCustomer(@PathVariable("customerId") int customerId) {
-		List<Information> listOfInformation = infoService.findInfoByCustomer(customerId);
+		Customer customer = customerService.findById(customerId);
+		List<Information> listOfInformation = infoService.findInfoByCustomer(customer);
 		return new ResponseEntity<List<Information>>(listOfInformation, HttpStatus.OK);
 	}
 

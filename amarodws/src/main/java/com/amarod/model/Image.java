@@ -27,7 +27,7 @@ import lombok.ToString;
 public class Image {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int imgId;
 	private String imgPath;
 	private String imgName;

@@ -2,6 +2,7 @@ package com.amarod.services;
 
 import java.util.List;
 
+import com.amarod.model.Customer;
 import com.amarod.model.Information;
 
 public interface InformationService {
@@ -10,6 +11,6 @@ public interface InformationService {
 
 	Information findById(int infoId);
 
-	List<Information> findInfoByCustomer(int entity);
+	List<Information> findInfoByCustomer(Customer entity);
 
 }

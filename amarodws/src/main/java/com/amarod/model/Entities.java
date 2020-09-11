@@ -29,7 +29,7 @@ import lombok.ToString;
 public class Entities {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int entityId;
 	private String entity;
 	private String entityDescription;

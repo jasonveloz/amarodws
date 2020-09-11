@@ -33,7 +33,7 @@ import lombok.ToString;
 public class Information {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int informationId;
 	@JsonIgnore
 	@ManyToOne

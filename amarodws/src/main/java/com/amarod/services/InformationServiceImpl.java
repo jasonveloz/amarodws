@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.amarod.model.Customer;
 import com.amarod.model.Information;
 import com.amarod.repo.InformationRepository;
 
@@ -20,7 +21,7 @@ public class InformationServiceImpl implements InformationService {
 	}
 
 	@Override
-	public List<Information> findInfoByCustomer(int customer) {
+	public List<Information> findInfoByCustomer(Customer customer) {
 		return infoRepository.findAllByCustomer(customer);
 	}
 

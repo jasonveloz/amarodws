@@ -30,7 +30,7 @@ import lombok.ToString;
 public class KeyValues {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int keyId;
 	private String keyName;
 	private String level;
