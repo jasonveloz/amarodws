@@ -1,14 +1,9 @@
 package com.amarod.model;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
@@ -43,9 +38,13 @@ public class Information {
 	private String lang;
 	private int orderNo;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Information_Keys",
-        joinColumns = @JoinColumn(name = "informationId", referencedColumnName = "informationId"),
-        inverseJoinColumns = @JoinColumn(name = "keyId", referencedColumnName = "keyId"))
-    private Set<KeyValues> keyValues	;
+ //	@ManyToMany
+ //   @JoinTable(name = "Information_Keys",
+ //       joinColumns = @JoinColumn(name = "informationId", referencedColumnName = "informationId"),
+ //       inverseJoinColumns = @JoinColumn(name = "keyId", referencedColumnName = "keyId"))
+ //   private Set<KeyValues> keyValues;
+	@ManyToOne
+	@JoinColumn(name = "keyValues", nullable = false)
+	private KeyValues keyValues;
+	
 }

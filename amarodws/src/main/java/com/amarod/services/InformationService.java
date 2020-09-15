@@ -13,4 +13,8 @@ public interface InformationService {
 
 	List<Information> findInfoByCustomer(Customer entity);
 
+	void delete(Information information);
+
+	void save(Information information);
+
 }

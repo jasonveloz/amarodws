@@ -36,15 +36,15 @@ public class Customer {
 	private String customerCode;
 	private String customerName;
 	private String description;
-	//@JsonIgnore
+	// @JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "entity", nullable = false)
 	private Entities entity;
 	private String img;
 	private String lang;
 	private int orderNo;
-	
-	@OneToMany(mappedBy="customer")
-    private Set<Information> information;
+
+	@OneToMany(mappedBy = "customer")
+	private Set<Information> information;
 
 }

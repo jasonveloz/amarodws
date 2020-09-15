@@ -30,4 +30,14 @@ public class InformationServiceImpl implements InformationService {
 		return infoRepository.findAll();
 	}
 
+	@Override
+	public void delete(Information information) {
+		infoRepository.delete(information);
+	}
+
+	@Override
+	public void save(Information information) {
+		infoRepository.save(information);
+	}
+
 }

@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -36,8 +37,12 @@ public class KeyValues {
 	private String level;
 	private String icon;
 
+	// @JsonIgnore
+	// @ManyToMany(mappedBy = "keyValues")
+	// private Set<Information> informations = new HashSet<>();
+
 	@JsonIgnore
-	@ManyToMany(mappedBy = "keyValues")
-	private Set<Information> informations = new HashSet<>();
+	@OneToMany(mappedBy = "keyValues")
+	private Set<Information> information;
 
 }
